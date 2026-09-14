@@ -1,0 +1,34 @@
+{
+  "id": "4b18bdc1-2f35-470a-a7d0-ed5ab7ef5bb9",
+  "name": "RolleSenter",
+  "publisher": "Knowit Insight Business Solutions AS",
+  "version": "1.0.0.5",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "28.0.0.0",
+  "idRanges": [
+    {
+      "from": 70100,
+      "to": 70200
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true,
+    "applyToDevExtension": false
+  },
+  "features": [
+    "NoImplicitWith"
+  ],
+  "resourceFolders": [".resources"],
+  "target": "Cloud"
+}

@@ -1,0 +1,2 @@
+TODO: Add your own instructions
+Read on how to write effective instructions here: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/ai/ai-agent-playground-effective-instructions
