@@ -1,4 +1,4 @@
-pageextension 78901"Business Manager RC Ext." extends "Business Manager Role Center"
+pageextension 78902 "Accountant RC Ext." extends "Accountant Role Center"
 {
     layout
     {

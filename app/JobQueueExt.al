@@ -1,4 +1,4 @@
-page 70100 "My Job Queue Activities"
+page 78900 "My Job Queue Activities"
 {
     PageType = CardPart;
     ApplicationArea = All;
@@ -18,10 +18,7 @@ page 70100 "My Job Queue Activities"
                     var
                         JobQueueEntry: Record "Job Queue Entry";
                     begin
-                        JobQueueEntry.SetRange(
-                            Status,
-                            JobQueueEntry.Status::Error);
-                        JobQueueEntry.SetFilter("Object ID to Run", '6192778..6225999|71554352|71553991|71553982|71553881|71553647');
+                        SetContiniaErrorFilter(JobQueueEntry);
 
                         Page.Run(
                             Page::"Job Queue Entries",
@@ -40,7 +37,7 @@ page 70100 "My Job Queue Activities"
                         JobQueueEntry.SetRange(
                             Status,
                             JobQueueEntry.Status::Error);
-                        JobQueueEntry.SetRange("Object ID to Run", 62500, 62599);
+                        JobQueueEntry.SetFilter("Object ID to Run", '62500..62599');
 
                         Page.Run(
                             Page::"Job Queue Entries",
@@ -95,10 +92,7 @@ page 70100 "My Job Queue Activities"
         QueueEntries := JobQueueEntry.Count();
 
         JobQueueEntry.Reset();
-        JobQueueEntry.SetRange(
-            Status,
-            JobQueueEntry.Status::Error);
-        JobQueueEntry.SetFilter("Object ID to Run", '6192778..6225999|71554352|71553991|71553982|71553881|71553647');
+        SetContiniaErrorFilter(JobQueueEntry);
         ContiniaFailedEntries := JobQueueEntry.Count();
 
         JobQueueEntry.Reset();
@@ -113,6 +107,14 @@ page 70100 "My Job Queue Activities"
             Status,
             JobQueueEntry.Status::Error);
         JobQueueEntryRecordErrors := JobQueueEntry.Count();
+    end;
+
+    local procedure SetContiniaErrorFilter(var JobQueueEntry: Record "Job Queue Entry")
+    begin
+        JobQueueEntry.SetRange(
+            Status,
+            JobQueueEntry.Status::Error);
+        JobQueueEntry.SetFilter("Object ID to Run", '6192778..6225999|71553646..72918663');
     end;
 
     var
